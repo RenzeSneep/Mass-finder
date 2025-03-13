@@ -114,9 +114,9 @@ def amounts_overall(amount):
         number_of_possible_combinations_entire_molecule.append(x)
     return number_of_possible_combinations_entire_molecule
 
-def sum_combinations(lijst, charge):
+def sum_combinations(values, charge):
     y=[]
-    for i in lijst:
+    for i in values:
         if charge == "+":
             x=sum(i)- mass_calculator.electron_mass
         elif charge == "-":
@@ -126,10 +126,10 @@ def sum_combinations(lijst, charge):
         y.append(x)
     return y
 
-def prod_combinations(lijst, number_of_possible_combinations_entire_molecule):
+def prod_combinations(values, number_of_possible_combinations_entire_molecule):
     y=[]
-    for i in range(len(lijst)):
-        x=np.prod(lijst[i])*number_of_possible_combinations_entire_molecule[i]
+    for i in range(len(values)):
+        x=np.prod(values[i])*number_of_possible_combinations_entire_molecule[i]
         y.append(x)
     return y
 
